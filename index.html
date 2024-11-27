@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>max vr</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script> 
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script> 
+</head>
+
+<body>
+ <a-scene>
+   <a-assets>
+
+       <!-- Video -->
+
+       <video id="videoclip" loop="true" src="tvAssets/harry_potter.mp4" crossorigin="anonymous" preload="auto"></video>
+
+       <img id="play" src="tvAssets/btnPlay.png" preload="auto">
+
+       <img id="pause" src="tvAssets/btnPause.png" preload="auto">
+
+       <img id="tv_background" src="tvAssets/tv_background.jpg" preload="auto">
+
+   </a-assets>
+<a-entity
+  
+  environment="preset: goldmine; dressingAmount:25; skyColor: black;skyType:gradient; seed: 474; ground: noise; groundTexture: walkernoise; fog: 0.5; flatShading: false; dressing: torii; dressingColor: gray; "></a-entity> -->
+   <a-sky src="my_image.jpg" alt="my background image"></a-sky>
+   <!-- Start of Whare/ House/ Museum -->
+    <a-cylinder id="floor" position="0 0 0" radius="10" src="images/dog.png" height="0.1"></a-cylinder>
+   <a-box id="box1" position=" 0  1.473  4.907" rotation="0  0  0" scale="10  3  0.2" src="images/dog.png"></a-box>
+   <a-box id="box2" position=" 0  1.473  -4.907" rotation="0  0  0" scale="10  3  0.2" src="images/dog.png"></a-box>
+   <a-box id="box3" position="5.049  1.454  -0.008" rotation="0  -90  0" scale="10  3  0.2" src="images/dog.png"></a-box>
+   <a-box id="box4" position="-5.049  1.454  -0.008" rotation="0  -90  0" scale="10  3  0.2" src="images/dog.png"></a-box>
+   <a-cylinder id="triangle_front" segments-radial="3" position="0  3.874 4.907" rotation="-90  0  0" scale="5.774  0.2  1.8" src="images/dog.png"></a-cylinder>
+     <a-cylinder id="triangle_back" segments-radial="3" position="0  3.874 -4.907" rotation="-90  0  0" scale="5.774  0.2  1.8" src="images/dog.png"></a-cylinder>
+   <a-box id="roof_right" position="2.580  4.328  0" rotation="28.433  90  0" scale="10.931  0.20  6.110" src="images/dog.png"></a-box>
+   <a-box id="roof_left" position="-2.599  4.3321  -0.017" rotation="28.433  -90  0" scale="10.931  0.20  6.130" src="images/dog.png"></a-box> <!--end of house-->
+   <!-- artwork strt -->
+   <a-plane id="art1" src="images/noo.jpg" scale="2 2 0.05" rotation="0 0 0" position="-0.162 1.934 -4.792"></a-plane>
+<!-- Srt Tv -->
+   <a-entity>
+
+     <a-video src="#videoclip" position="-3.893 1.6 0" rotation="0 90 0" width="2" height="1.125"></a-video>
+
+     <!-- TV background -->
+
+     <a-plane id="videoControls" position="-3.893 0.854 0" scale="2 0.386 1.714" rotation="0 90 0" opacity="1" src="#tv_background">
+
+       <!-- Play button -->
+
+       <a-plane id="vidplaybox" src="#play" scale="0.122 0.678 0.122" position="-0.350 0 .01" shader="flat"  transparent="true" videoplayer></a-plane>
+
+       <!-- Stop button -->
+
+       <a-plane id="vidpausebox" src="#pause" scale="0.122 0.678 0.122" position="0.350 0 .01" shader="flat"  transparent="true" videopauser></a-plane>
+
+     </a-plane>
+
+   </a-entity>
+
+   <a-entity cursor="rayOrigin: mouse"></a-entity>
+ </a-scene>
+</body>
+</html>
